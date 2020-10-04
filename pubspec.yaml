@@ -1,7 +1,8 @@
 name: roles
 description: A dart package for handling role based authorized function calls
 version: 0.0.1
-# homepage: https://www.example.com
+homepage: https://github.com/cookytech/roles
+repository: https://github.com/cookytech/roles
 
 environment:
   sdk: '>=2.8.1 <3.0.0'
