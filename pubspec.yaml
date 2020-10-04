@@ -1,6 +1,6 @@
 name: roles
 description: A dart package for handling role based authorized function calls
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/cookytech/roles
 repository: https://github.com/cookytech/roles
 
@@ -9,9 +9,10 @@ environment:
 
 dependencies:
   equatable: ^1.2.5
-  mockito: ^4.1.2
 
 dev_dependencies:
   pedantic: ^1.9.0
   test: ^1.14.4
+  mockito: ^4.1.2
+
 
