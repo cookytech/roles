@@ -19,6 +19,10 @@ abstract class _RoleCapabilityRepositoryInterface {
 
   /// We can also list capabilties for a user at runtime
   List<RoleCapability> getCapabilitiesForUser(RoleUser roleUser);
+
+  /// Take a [RoleUser], take a [RoleCapability] and return whether
+  /// user has that capability or not
+  bool doesUserHaveCapability(RoleUser user, RoleCapability capability);
 }
 
 class RoleCapabilityRepository implements _RoleCapabilityRepositoryInterface {
@@ -60,5 +64,10 @@ class RoleCapabilityRepository implements _RoleCapabilityRepositoryInterface {
     (rolesAndCapabilties[role] ?? [])
       ..removeWhere((element) => capabilities.contains(element));
     return;
+  }
+
+  @override
+  bool doesUserHaveCapability(RoleUser user, RoleCapability capability) {
+    return rolesAndCapabilties[user.role].contains(capability);
   }
 }
