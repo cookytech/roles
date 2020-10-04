@@ -1,4 +1,6 @@
+
 import 'package:meta/meta.dart';
+import 'package:roles/src/interfaces/role_capability.dart';
 
 abstract class _RoleCapabilityRepositoryInterface {
   ///We can initialize it with a map of roles to capabilities
@@ -6,7 +8,7 @@ abstract class _RoleCapabilityRepositoryInterface {
 
   /// We can add capabilities to a role at runtime
   void addCapabilitiesToRole(
-      {@required String role, @required List<String> capabilities});
+      {@required String role, @required List<RoleCapability> capabilities});
 
   /// We can remove capabilities from a role at runtime
 
