@@ -68,6 +68,6 @@ class RoleCapabilityRepository implements _RoleCapabilityRepositoryInterface {
 
   @override
   bool doesUserHaveCapability(RoleUser user, RoleCapability capability) {
-    return rolesAndCapabilties[user.role].contains(capability);
+    return (rolesAndCapabilties[user.role] ?? []).contains(capability);
   }
 }
