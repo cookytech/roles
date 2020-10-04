@@ -4,7 +4,7 @@ import 'package:roles/src/interfaces/role_user.dart';
 
 abstract class _RoleCapabilityRepositoryInterface {
   ///We can initialize it with a map of roles to capabilities
-  void init(Map<String, List<String>> rolesToCapabilites);
+  void init(Map<String, List<RoleCapability>> rolesToCapabilites);
 
   /// We can add capabilities to a role at runtime
   void addCapabilitiesToRole(
@@ -27,31 +27,38 @@ class RoleCapabilityRepository implements _RoleCapabilityRepositoryInterface {
   factory RoleCapabilityRepository() => _instance;
   RoleCapabilityRepository._internal();
 
-  final Map<String, List<String>> rolesAndCapabilties = {};
+  Map<String, List<RoleCapability>> rolesAndCapabilties = {};
 
   @override
   void addCapabilitiesToRole({String role, List<RoleCapability> capabilities}) {
-    // TODO: implement addCapabilitiesToRole
+    if (rolesAndCapabilties[role] == null) {
+      rolesAndCapabilties[role] = capabilities;
+    } else {
+      rolesAndCapabilties[role].addAll(capabilities);
+    }
+    return;
   }
 
   @override
   List<RoleCapability> getCapabilitiesForRole(String role) {
-    // TODO: implement getCapabilitiesForRole
-    throw UnimplementedError();
+    return rolesAndCapabilties[role].toSet().toList();
   }
 
   @override
   List<RoleCapability> getCapabilitiesForUser(RoleUser roleUser) {
-    // TODO: implement getCapabilitiesForUser
-    throw UnimplementedError();
+    return rolesAndCapabilties[roleUser.role].toSet().toList();
   }
 
   @override
-  void init(Map<String, List<String>> rolesToCapabilites) {}
+  void init(Map<String, List<RoleCapability>> rolesAndCapabilites) {
+    rolesAndCapabilties = rolesAndCapabilites;
+  }
 
   @override
   void removeCapabilitiesFromRole(
       {String role, List<RoleCapability> capabilities}) {
-    // TODO: implement removeCapabilitiesFromRole
+    (rolesAndCapabilties[role] ?? [])
+      ..removeWhere((element) => capabilities.contains(element));
+    return;
   }
 }
