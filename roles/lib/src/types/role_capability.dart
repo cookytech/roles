@@ -1,3 +1,4 @@
+import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 
 class RoleCapability extends Equatable{
@@ -5,7 +6,7 @@ class RoleCapability extends Equatable{
   final String errorMessage;
 
   RoleCapability({
-    this.capability,
+    @required this.capability,
     this.errorMessage = 'Capability not available to the current role',
   });
 

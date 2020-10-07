@@ -1,6 +1,6 @@
 import 'package:meta/meta.dart';
-import 'package:roles/src/interfaces/role_capability.dart';
-import 'package:roles/src/interfaces/role_user.dart';
+import 'package:roles/src/types/role_capability.dart';
+import 'package:roles/src/types/role_user.dart';
 
 abstract class _RoleCapabilityRepositoryInterface {
   ///We can initialize it with a map of roles to capabilities
