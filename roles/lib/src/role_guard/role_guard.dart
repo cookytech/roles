@@ -1,5 +1,4 @@
-import 'package:roles/src/interfaces/role_capability.dart';
-import 'package:roles/src/interfaces/role_user.dart';
+import 'package:roles/src/roles_base.dart';
 import 'package:roles/src/repositories/role_capability_repository.dart';
 
 class RoleGuard {

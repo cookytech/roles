@@ -1,8 +1,8 @@
 import 'package:roles/roles.dart';
-import 'package:roles/src/interfaces/role_capability.dart';
 import 'package:roles/src/role_guard/role_guard.dart';
 import 'package:test/test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:roles/src/roles_base.dart';
 
 class MockRoleUser extends Mock implements RoleUser {}
 

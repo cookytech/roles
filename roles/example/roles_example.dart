@@ -1,7 +1,4 @@
 import 'package:roles/roles.dart';
-import 'package:roles/src/interfaces/role_capability.dart';
-import 'package:roles/src/repositories/role_capability_repository.dart';
-import 'package:roles/src/role_guard/role_guard.dart';
 
 /// Make sure your user class implements a roleUser
 class User implements RoleUser {

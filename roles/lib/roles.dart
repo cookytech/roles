@@ -1,8 +1,6 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
 library roles;
 
 export 'src/roles_base.dart';
 
-// TODO: Export any libraries intended for clients of this package.
+export 'src/repositories/role_capability_repository.dart';
+export 'src/role_guard/role_guard.dart';
